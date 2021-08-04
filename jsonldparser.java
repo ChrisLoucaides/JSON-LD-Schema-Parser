@@ -2,7 +2,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 public class jsonldparser {
-    public static void main(String[] args) throws InterruptedException{
+    public static void main(String[] args){
         parseJSON();
         System.exit(0);
     }
@@ -69,7 +69,7 @@ public class jsonldparser {
         String multiListName = inputString("Enter list name: ");
         multiListName = "\t \t'" + multiListName + "': [";
         boolean addNew = true;
-        boolean addAnotherSingle = true;
+        boolean addAnotherSingle;
         int choice = 0;
         boolean first = true;
         String innerChoice = "";
@@ -83,7 +83,7 @@ public class jsonldparser {
             choice = inputInt("Enter choice: ");
 
             if(choice == 1){
-
+                addAnotherSingle = true;
                 while(addAnotherSingle){
                     if(first){
                         multiListName += "{";
